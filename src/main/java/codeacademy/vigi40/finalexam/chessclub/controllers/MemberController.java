@@ -40,7 +40,7 @@ public class MemberController {
         this.memberService.addMember(MemberConverter.convertAddMemberDtoToEntity(memberDto));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteMemberById(@PathVariable Long id){
         this.memberService.deleteMemberById(id);
     }

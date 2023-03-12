@@ -1,0 +1,22 @@
+#editMemberForm {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 3rem auto;
+  }®
+  
+  #editMemberForm h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  #editMemberForm .actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #editMemberForm button {
+    margin: 0.5rem 1rem;
+    width: 40%;
+  }
+  

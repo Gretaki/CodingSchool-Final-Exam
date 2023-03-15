@@ -1,5 +1,7 @@
 package codeacademy.vigi40.finalexam.chessclub.entities;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +11,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,9 +29,12 @@ public class Member {
 
     private String lastName;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false, length = 20)
     private String personalCode;
 
-    private String startDate;
+    @Column(nullable = false)
+    private LocalDate startDate;
 }

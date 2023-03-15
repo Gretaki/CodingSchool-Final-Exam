@@ -16,9 +16,16 @@ public class MemberDto {
 
     private String email;
 
-//    private String gender;
-//
-//    private String age;
-//
-//    private String experience;
+    private Gender gender;
+
+    private int age;
+
+    private float monthsOfExperience;
+
+    public enum Gender {
+        UNKNOWN,
+        MALE,
+        FEMALE,
+        OTHER
+    }
 }

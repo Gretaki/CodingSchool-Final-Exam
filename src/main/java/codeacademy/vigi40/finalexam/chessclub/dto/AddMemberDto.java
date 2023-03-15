@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -14,9 +16,7 @@ public class AddMemberDto {
 
     private String email;
 
-//    private String gender;
-//
-//    private String age;
-//
-//    private String experience;
+    private String personalCode;
+
+    private LocalDate startDate;
 }

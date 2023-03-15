@@ -2,6 +2,8 @@ package codeacademy.vigi40.finalexam.chessclub.services;
 
 import codeacademy.vigi40.finalexam.chessclub.entities.Member;
 import codeacademy.vigi40.finalexam.chessclub.repositories.MemberRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +17,8 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public List<Member> getMembers(){
-        return memberRepository.findAll();
+    public Page<Member> getMembers(Pageable pageable){
+        return memberRepository.findAll(pageable);
     }
 
     public Member getMemberById(Long id){
@@ -49,7 +51,7 @@ public class MemberService {
         }
 
         if (member.getEmail() != null && !oldMember.getEmail().equals(member.getEmail())){
-            oldMember.setLastName(member.getEmail());
+            oldMember.setEmail(member.getEmail());
         }
 
         memberRepository.saveAndFlush(oldMember);

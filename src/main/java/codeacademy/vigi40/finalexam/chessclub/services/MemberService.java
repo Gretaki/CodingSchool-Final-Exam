@@ -16,23 +16,23 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public Page<Member> getMembers(Pageable pageable){
+    public Page<Member> getMembers(Pageable pageable) {
         return memberRepository.findAll(pageable);
     }
 
-    public Member getMemberById(Long id){
+    public Member getMemberById(Long id) {
         return memberRepository.findById(id).orElse(null);
     }
 
-    public void addMember(Member member){
+    public void addMember(Member member) {
         this.memberRepository.saveAndFlush(member);
     }
 
-    public void deleteMemberById(Long id){
+    public void deleteMemberById(Long id) {
         this.memberRepository.deleteById(id);
     }
 
-    public void editMemberById(Long id, Member member){
+    public void editMemberById(Long id, Member member) {
         Optional<Member> oldMemberOptional = memberRepository.findById(id);
 
         if (oldMemberOptional.isEmpty()) {
@@ -41,23 +41,23 @@ public class MemberService {
 
         Member oldMember = oldMemberOptional.get();
 
-        if (member.getName() != null && !oldMember.getName().equals(member.getName())){
+        if (member.getName() != null && !oldMember.getName().equals(member.getName())) {
             oldMember.setName(member.getName());
         }
 
-        if (member.getLastName() != null && !oldMember.getLastName().equals(member.getLastName())){
+        if (member.getLastName() != null && !oldMember.getLastName().equals(member.getLastName())) {
             oldMember.setLastName(member.getLastName());
         }
 
-        if (member.getEmail() != null && !oldMember.getEmail().equals(member.getEmail())){
+        if (member.getEmail() != null && !oldMember.getEmail().equals(member.getEmail())) {
             oldMember.setEmail(member.getEmail());
         }
 
-        if (member.getPersonalCode() != null && !oldMember.getPersonalCode().equals(member.getPersonalCode())){
+        if (member.getPersonalCode() != null && !oldMember.getPersonalCode().equals(member.getPersonalCode())) {
             oldMember.setPersonalCode(member.getPersonalCode());
         }
 
-        if (member.getStartDate() != null && !oldMember.getStartDate().equals(member.getStartDate())){
+        if (member.getStartDate() != null && !oldMember.getStartDate().equals(member.getStartDate())) {
             oldMember.setStartDate(member.getStartDate());
         }
 

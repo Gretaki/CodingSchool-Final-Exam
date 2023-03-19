@@ -1,6 +1,7 @@
 # Chess club
 
 This application is for chess club administrators. It allows:
+
 * register new members
 * view list of existing members
 * edit members
@@ -10,6 +11,7 @@ Application has one member controller with CRUD operations.
 API call examples are in postman collection file named: ***
 
 ## Technologies used:
+
 * HTML
 * CSS
 * Javascript
@@ -19,6 +21,7 @@ API call examples are in postman collection file named: ***
 * Spring Boot
 
 ## Preparations:
+
 * need to create database named: chess-club
 * root user password: 12345678
 

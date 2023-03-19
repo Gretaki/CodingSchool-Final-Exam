@@ -3,15 +3,12 @@ package codeacademy.vigi40.finalexam.chessclub.converters;
 import codeacademy.vigi40.finalexam.chessclub.dto.AddMemberDto;
 import codeacademy.vigi40.finalexam.chessclub.dto.MemberDto;
 import codeacademy.vigi40.finalexam.chessclub.entities.Member;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public class MemberConverter {
@@ -117,13 +114,5 @@ public class MemberConverter {
     private static float calculateExperience(LocalDate startDate) {
         Period period = Period.between(startDate, LocalDate.now());
         return period.getYears() * 12 + period.getMonths();
-    }
-
-    public static List<MemberDto> convertMemberEntityListToDto(Page<Member> members) {
-        List<MemberDto> mamberDtoList = new ArrayList<>();
-        for (Member m : members) {
-            mamberDtoList.add(convertMemberEntityToDto(m));
-        }
-        return mamberDtoList;
     }
 }

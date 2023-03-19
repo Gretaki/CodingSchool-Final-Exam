@@ -1,16 +1,21 @@
 import { getMemberByID, editMember } from "../../commons/requests.js";
-import { validateEmail, validatePersonalCode, validateStartDate } from "../../commons/utils.js";
+import {
+  validateEmail,
+  validatePersonalCode,
+  validateStartDate,
+} from "../../commons/utils.js";
 
 const editMemberForm = document
   .getElementById("editMemberForm")
   .querySelector("form");
 
 let oldMemberData;
+let oldMemberId;
 
 const loadMemberData = async () => {
-  const memberId = new URLSearchParams(window.location.search).get("id");
+  oldMemberId = new URLSearchParams(window.location.search).get("id");
 
-  oldMemberData = await getMemberByID(memberId);
+  oldMemberData = await getMemberByID(oldMemberId);
   editMemberForm.name.value = oldMemberData.name;
   editMemberForm.lastName.value = oldMemberData.lastName;
   editMemberForm.email.value = oldMemberData.email;
@@ -60,7 +65,8 @@ const handleFormSubmit = async () => {
           : undefined,
     };
 
-    await editMember(member, oldMemberData.id);
+    console.log(member);
+    await editMember(member, oldMemberId);
     window.location.replace("../member-list/member-list.html");
   });
 };

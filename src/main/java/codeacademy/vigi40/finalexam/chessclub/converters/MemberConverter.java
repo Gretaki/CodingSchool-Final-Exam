@@ -38,14 +38,14 @@ public class MemberConverter {
         return member;
     }
 
-    private static boolean validateEmail(String email) {
+    public static boolean validateEmail(String email) {
         String regex = "^(?=.{1,64}@)[A-Za-z0-9\\+_-]+(\\.[A-Za-z0-9\\+_-]+)*@[^-][A-Za-z0-9\\+-]+(\\.[A-Za-z0-9\\+-]+)*(\\.[A-Za-z]{2,})$";
         return Pattern.compile(regex)
                 .matcher(email)
                 .matches();
     }
 
-    private static boolean validatePersonalCode(String personalCode) {
+    public static boolean validatePersonalCode(String personalCode) {
         return personalCode.length() == 11 &&
                 Long.parseLong(personalCode) > 0 &&
                 Long.parseLong(personalCode.substring(0, 1)) < 7 &&
@@ -53,7 +53,7 @@ public class MemberConverter {
                 Long.parseLong(personalCode.substring(5, 7)) <= 31;
     }
 
-    private static boolean validateStartDate(LocalDate startDate) {
+    public static boolean validateStartDate(LocalDate startDate) {
         return LocalDate.now().isAfter(startDate);
     }
 

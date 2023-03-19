@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -51,17 +53,29 @@ public class MemberController {
 
     @PostMapping
     public void addMember(@RequestBody AddMemberDto memberDto) {
-        this.memberService.addMember(MemberConverter.convertAddMemberDtoToEntity(memberDto));
+        try {
+            this.memberService.addMember(MemberConverter.convertAddMemberDtoToEntity(memberDto));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @DeleteMapping("/{id}")
     public void deleteMemberById(@PathVariable Long id) {
-        this.memberService.deleteMemberById(id);
+        try {
+            this.memberService.deleteMemberById(id);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PatchMapping("/{id}")
     public void editMemberById(@PathVariable Long id, @RequestBody AddMemberDto memberDto) {
-        this.memberService.editMemberById(id, MemberConverter.convertAddMemberDtoToEntity(memberDto));
+        try {
+            this.memberService.editMemberById(id, memberDto);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
 
     record MemberListResponse(List<MemberDto> members, Integer currentPage, long totalItems, Integer totalPages) {

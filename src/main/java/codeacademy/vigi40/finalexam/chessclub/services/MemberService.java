@@ -1,12 +1,17 @@
 package codeacademy.vigi40.finalexam.chessclub.services;
 
+import codeacademy.vigi40.finalexam.chessclub.dto.AddMemberDto;
 import codeacademy.vigi40.finalexam.chessclub.entities.Member;
 import codeacademy.vigi40.finalexam.chessclub.repositories.MemberRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Optional;
+import static codeacademy.vigi40.finalexam.chessclub.converters.MemberConverter.validateEmail;
+import static codeacademy.vigi40.finalexam.chessclub.converters.MemberConverter.validatePersonalCode;
+import static codeacademy.vigi40.finalexam.chessclub.converters.MemberConverter.validateStartDate;
 
 @Service
 public class MemberService {
@@ -21,7 +26,7 @@ public class MemberService {
     }
 
     public Member getMemberById(Long id) {
-        return memberRepository.findById(id).orElse(null);
+        return memberRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Member with given ID is not found"));
     }
 
     public void addMember(Member member) {
@@ -29,36 +34,43 @@ public class MemberService {
     }
 
     public void deleteMemberById(Long id) {
-        this.memberRepository.deleteById(id);
+        Member member = getMemberById(id);
+        this.memberRepository.delete(member);
     }
 
-    public void editMemberById(Long id, Member member) {
-        Optional<Member> oldMemberOptional = memberRepository.findById(id);
+    public void editMemberById(Long id, AddMemberDto memberDto) {
+        Member oldMember = getMemberById(id);
 
-        if (oldMemberOptional.isEmpty()) {
-            return;
+        if (memberDto.getName() != null && !oldMember.getName().equals(memberDto.getName())) {
+            oldMember.setName(memberDto.getName());
         }
 
-        Member oldMember = oldMemberOptional.get();
-
-        if (member.getName() != null && !oldMember.getName().equals(member.getName())) {
-            oldMember.setName(member.getName());
+        if (memberDto.getLastName() != null && !oldMember.getLastName().equals(memberDto.getLastName())) {
+            oldMember.setLastName(memberDto.getLastName());
         }
 
-        if (member.getLastName() != null && !oldMember.getLastName().equals(member.getLastName())) {
-            oldMember.setLastName(member.getLastName());
+        if (memberDto.getEmail() != null && !oldMember.getEmail().equals(memberDto.getEmail())) {
+            if (!validateEmail(memberDto.getEmail())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email is not valid");
+            }
+
+            oldMember.setEmail(memberDto.getEmail());
         }
 
-        if (member.getEmail() != null && !oldMember.getEmail().equals(member.getEmail())) {
-            oldMember.setEmail(member.getEmail());
+        if (memberDto.getPersonalCode() != null && !oldMember.getPersonalCode().equals(memberDto.getPersonalCode())) {
+            if (!validatePersonalCode(memberDto.getPersonalCode())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Personal code is not valid");
+            }
+
+            oldMember.setPersonalCode(memberDto.getPersonalCode());
         }
 
-        if (member.getPersonalCode() != null && !oldMember.getPersonalCode().equals(member.getPersonalCode())) {
-            oldMember.setPersonalCode(member.getPersonalCode());
-        }
+        if (memberDto.getStartDate() != null && !oldMember.getStartDate().equals(memberDto.getStartDate())) {
+            if (!validateStartDate(memberDto.getStartDate())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Start date is not valid");
+            }
 
-        if (member.getStartDate() != null && !oldMember.getStartDate().equals(member.getStartDate())) {
-            oldMember.setStartDate(member.getStartDate());
+            oldMember.setStartDate(memberDto.getStartDate());
         }
 
         memberRepository.saveAndFlush(oldMember);

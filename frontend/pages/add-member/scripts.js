@@ -32,6 +32,7 @@ const handleFormSubmit = async () => {
       personalCode: form.personalCode.value,
       startDate: form.startDate.value,
     };
+    
     await saveMember(member);
     window.location.reload();
   });

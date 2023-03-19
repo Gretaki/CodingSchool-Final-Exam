@@ -75,6 +75,10 @@ const getExperience = (monthsOfExperience) => {
   const result = [];
   years && result.push(years + " " + getYearsPlural(years));
   months && result.push(months + " " + getMonthsPlural(months));
+  
+  if (!years && !months) {
+    result.push("0 months");
+  }
   return result.join(" and ");
 };
 

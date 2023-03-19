@@ -6,7 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -52,6 +51,14 @@ public class MemberService {
 
         if (member.getEmail() != null && !oldMember.getEmail().equals(member.getEmail())){
             oldMember.setEmail(member.getEmail());
+        }
+
+        if (member.getPersonalCode() != null && !oldMember.getPersonalCode().equals(member.getPersonalCode())){
+            oldMember.setPersonalCode(member.getPersonalCode());
+        }
+
+        if (member.getStartDate() != null && !oldMember.getStartDate().equals(member.getStartDate())){
+            oldMember.setStartDate(member.getStartDate());
         }
 
         memberRepository.saveAndFlush(oldMember);

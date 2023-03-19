@@ -8,7 +8,7 @@ This application is for chess club administrators. It allows:
 * delete members
 
 Application has one member controller with CRUD operations.
-API call examples are in postman collection file named: ***
+API call examples are in postman collection file named: [chess-club.postman_collection.json](chess-club.postman_collection.json)
 
 ## Technologies used:
 

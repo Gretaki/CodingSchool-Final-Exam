@@ -1,36 +1,21 @@
-#membersTable {
-    margin: 100px auto;
-    width: 50%;
-  }
-  
-  #addMember {
-    margin-bottom: 2rem;
-  }
-  
+body {
+  background-color: black;
+}
 
-  .pagination-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    justify-content: center;
-  }
-  .pagination-number,
-  .pagination-button{
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-    margin: 0.25rem 0.25rem;
-    cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: .2rem;
-  }
-  .pagination-number:hover,
-  .pagination-button:not(.disabled):hover {
-    background: #fff;
-  }
-  .pagination-number.active {
-    color: #fff;
-    background: #0085b6;
-  }
+#membersTable {
+  margin: 100px auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.page-item {
+  --bs-pagination-color: #f8f9fa;
+  --bs-pagination-bg: #000;
+  --bs-pagination-border-color: #f8f9fa;
+  --bs-pagination-hover-color: black;
+  --bs-pagination-hover-bg: #e9ecef;
+  --bs-pagination-active-color: black;
+  --bs-pagination-active-bg: white;
+  --bs-pagination-active-border-color: white;
+  cursor: pointer;
+}

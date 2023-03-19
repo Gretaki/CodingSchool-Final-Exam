@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+}
+
+#landing {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+img {
+  width: 80%;
+}

@@ -14,10 +14,10 @@
     <title>Chess club</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Home</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a
               class="nav-link"
@@ -27,31 +27,30 @@
             >
           </div>
         </div>
+        <button type="button" class="btn btn-outline-light" id="addMember">
+          Add new member
+        </button>
       </div>
     </nav>
 
     <div id="membersTable">
-        <button type="button" class="btn btn-primary" id="addMember">
-          Add new member
-        </button>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">First name</th>
-              <th scope="col">Last name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
-              <th scope="col">Experience</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Experience</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-      <nav id="pagination" aria-label="pagination">
-      </nav>
+    <nav id="pagination" aria-label="pagination"></nav>
 
     <script type="module" src="./scripts.js"></script>
   </body>

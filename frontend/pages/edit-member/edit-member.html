@@ -14,10 +14,10 @@
     <title>Chess club</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Home</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a
               class="nav-link"
@@ -27,6 +27,9 @@
             >
           </div>
         </div>
+        <button type="button" class="btn btn-outline-light" id="addMember">
+          Add new member
+        </button>
       </div>
     </nav>
 
@@ -85,13 +88,12 @@
           </div>
 
           <div class="actions">
-            <button type="submit" class="btn btn-primary" id="saveButton">
+            <button type="submit" class="btn btn-secondary btn-outline-light" id="saveButton">
               Save
             </button>
-            <button type="reset" class="btn btn-danger" id="cancelButton">
+            <button type="reset" class="btn btn-outline-light" id="cancelButton">
               Cancel
-            </button>
-          </div>
+        </button>
         </form>
       </div>
 

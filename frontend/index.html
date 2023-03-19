@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-            crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
     <title>Chess club</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+      <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Home</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="/pages/member-list/member-list.html"
-                >Member list</a
-                >
-            </div>
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a
+              class="nav-link"
+              aria-current="page"
+              href="/pages/member-list/member-list.html"
+              >Member list</a
+            >
+          </div>
         </div>
+        <button type="button" class="btn btn-outline-light" id="addMember">
+          Add new member
+        </button>
+      </div>
+    </nav>
+
+    <div id="landing">
+      <img
+        src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793"
+        alt="Chess"
+      />
     </div>
-</nav>
-<div style="margin-top: 10rem; text-align: center">
-    <h1>Landing page</h1>
-</div>
-</body>
+  </body>
 </html>

@@ -14,10 +14,10 @@
     <title>Chess club</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Home</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a
               class="nav-link"
@@ -27,73 +27,77 @@
             >
           </div>
         </div>
+        <button type="button" class="btn btn-outline-light" id="addMember">
+          Add new member
+        </button>
       </div>
     </nav>
 
     <div id="addMemberForm">
-        <h2>Add new member</h2>
-        <form>
+      <h2>Add new member</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter name"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Enter name"
-            />
-          </div>
+        <div class="form-group">
+          <label for="lastName">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Enter last name"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="lastName"
-              placeholder="Enter last name"
-            />
-          </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email address"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Enter email address"
-            />
-          </div>
+        <div class="form-group">
+          <label for="personalCode">Personal code</label>
+          <input
+            type="text"
+            minlength="11"
+            maxlength="11"
+            class="form-control"
+            id="personalCode"
+            placeholder="Enter personal code"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="personalCode">Personal code</label>
-            <input
-              type="text" minlength="11" maxlength="11" 
-              class="form-control"
-              id="personalCode"
-              placeholder="Enter personal code"
-            />
-          </div>
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startDate"
+            placeholder="Enter beginning date of chess career"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="startDate">Start Date</label>
-            <input
-              type="date"
-              class="form-control"
-              id="startDate"
-              placeholder="Enter beginning date of chess career"
-            />
-          </div>
-
-          <div class="actions">
-            <button type="submit" class="btn btn-primary" id="saveButton">
-              Save
-            </button>
-            <button type="reset" class="btn btn-danger" id="cancelButton">
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-secondary btn-outline-light">
+            Save
+          </button>
+          <button type="reset" class="btn btn-outline-light" id="cancelButton">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
 
     <script type="module" src="./scripts.js"></script>
   </body>

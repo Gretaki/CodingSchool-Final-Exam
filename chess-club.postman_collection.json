@@ -1,0 +1,1354 @@
+{
+	"info": {
+		"_postman_id": "707c0344-fa35-42d6-8c36-5d74d6948c46",
+		"name": "VIGI40 final-exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25613962"
+	},
+	"item": [
+		{
+			"name": "get all members",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/chess-club",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"chess-club"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all members with default pagination successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 10:12:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 100,\n    \"members\": [\n        {\n            \"id\": 1,\n            \"name\": \"Northrop\",\n            \"lastName\": \"Eddowis\",\n            \"email\": \"neddowis0@army.mil\",\n            \"gender\": \"MALE\",\n            \"age\": 121,\n            \"monthsOfExperience\": 1\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Melessa\",\n            \"lastName\": \"Heinlein\",\n            \"email\": \"mheinlein1@nbcnews.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 51,\n            \"monthsOfExperience\": 12\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dillie\",\n            \"lastName\": \"Drysdall\",\n            \"email\": \"ddrysdall2@salon.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 12,\n            \"monthsOfExperience\": 1\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Amitie\",\n            \"lastName\": \"Heinecke\",\n            \"email\": \"aheinecke3@cnn.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 0,\n            \"monthsOfExperience\": 6\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ugo\",\n            \"lastName\": \"Vanacci\",\n            \"email\": \"uvanacci4@squidoo.com\",\n            \"gender\": \"MALE\",\n            \"age\": 118,\n            \"monthsOfExperience\": 11\n        }\n    ],\n    \"totalPages\": 20,\n    \"currentPage\": 0\n}"
+				},
+				{
+					"name": "get all members not default page successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:31:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [\n        {\n            \"id\": 6,\n            \"name\": \"Katerina\",\n            \"lastName\": \"Shirley\",\n            \"email\": \"kshirley5@jugem.jp\",\n            \"gender\": \"MALE\",\n            \"age\": 58,\n            \"monthsOfExperience\": 10\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Blaire\",\n            \"lastName\": \"Querree\",\n            \"email\": \"bquerree6@apache.org\",\n            \"gender\": \"MALE\",\n            \"age\": 39,\n            \"monthsOfExperience\": 0\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Lauralee\",\n            \"lastName\": \"Diggin\",\n            \"email\": \"ldiggin7@cocolog-nifty.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 69,\n            \"monthsOfExperience\": 8\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Archer\",\n            \"lastName\": \"Lepick\",\n            \"email\": \"alepick8@theatlantic.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 104,\n            \"monthsOfExperience\": 1\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Jenifer\",\n            \"lastName\": \"Weatherhead\",\n            \"email\": \"jweatherhead9@whitehouse.gov\",\n            \"gender\": \"MALE\",\n            \"age\": 60,\n            \"monthsOfExperience\": 11\n        }\n    ],\n    \"totalPages\": 21,\n    \"currentPage\": 1\n}"
+				},
+				{
+					"name": "get all members not default size successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?size=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:31:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [\n        {\n            \"id\": 1,\n            \"name\": \"Northrop\",\n            \"lastName\": \"Eddowis\",\n            \"email\": \"neddowis0@army.mil\",\n            \"gender\": \"MALE\",\n            \"age\": 121,\n            \"monthsOfExperience\": 1\n        }\n    ],\n    \"totalPages\": 101,\n    \"currentPage\": 0\n}"
+				},
+				{
+					"name": "get all members not default page and size successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?page=1&size=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:32:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [\n        {\n            \"id\": 2,\n            \"name\": \"Melessa\",\n            \"lastName\": \"Heinlein\",\n            \"email\": \"mheinlein1@nbcnews.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 51,\n            \"monthsOfExperience\": 12\n        }\n    ],\n    \"totalPages\": 101,\n    \"currentPage\": 1\n}"
+				},
+				{
+					"name": "get all members non existing size returns empty members array",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?page=1000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:33:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [],\n    \"totalPages\": 21,\n    \"currentPage\": 1000\n}"
+				},
+				{
+					"name": "get all members non existing page returns empty members array",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?page=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:34:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [],\n    \"totalPages\": 21,\n    \"currentPage\": 100\n}"
+				},
+				{
+					"name": "get all members non existing query param is ignored",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club?s=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							],
+							"query": [
+								{
+									"key": "s",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:34:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 101,\n    \"members\": [\n        {\n            \"id\": 1,\n            \"name\": \"Northrop\",\n            \"lastName\": \"Eddowis\",\n            \"email\": \"neddowis0@army.mil\",\n            \"gender\": \"MALE\",\n            \"age\": 121,\n            \"monthsOfExperience\": 1\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Melessa\",\n            \"lastName\": \"Heinlein\",\n            \"email\": \"mheinlein1@nbcnews.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 51,\n            \"monthsOfExperience\": 12\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dillie\",\n            \"lastName\": \"Drysdall\",\n            \"email\": \"ddrysdall2@salon.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 12,\n            \"monthsOfExperience\": 1\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Amitie\",\n            \"lastName\": \"Heinecke\",\n            \"email\": \"aheinecke3@cnn.com\",\n            \"gender\": \"FEMALE\",\n            \"age\": 0,\n            \"monthsOfExperience\": 6\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ugo\",\n            \"lastName\": \"Vanacci\",\n            \"email\": \"uvanacci4@squidoo.com\",\n            \"gender\": \"MALE\",\n            \"age\": 118,\n            \"monthsOfExperience\": 11\n        }\n    ],\n    \"totalPages\": 21,\n    \"currentPage\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "get member by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/chess-club/:memberId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"chess-club",
+						":memberId"
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "2",
+							"description": "ID of member"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get member by id successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "2",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 10:15:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Melessa\",\n    \"lastName\": \"Heinlein\",\n    \"email\": \"mheinlein1@nbcnews.com\",\n    \"personalCode\": \"47201228750\",\n    \"startDate\": \"2022-03-13\"\n}"
+				},
+				{
+					"name": "get member by id non existing id throws 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "2000",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:38:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-03-19T17:38:48.294+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"path\": \"/chess-club/2000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add new member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jonas\",\n    \"lastName\": \"Jonaitis\",\n    \"email\": \"jonaiciu@gmail.com\",\n    \"personalCode\": \"39101011234\",\n    \"startDate\": \"2020-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/chess-club",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"chess-club"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add new member with all fields returns 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jonas\",\n    \"lastName\": \"Jonaitis\",\n    \"email\": \"jonaiciu@gmail.com\",\n    \"personalCode\": \"39101011234\",\n    \"startDate\": \"2020-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:39:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "add new member without start date throws 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jonas\",\n    \"lastName\": \"Jonaitis\",\n    \"email\": \"jonaiciu@gmail.com\",\n    \"personalCode\": \"39101011234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:57:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-03-19T17:57:14.256+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/chess-club\"\n}"
+				},
+				{
+					"name": "add new member without name returns 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"lastName\": \"Jonaitis\",\n    \"email\": \"jonaiciu@gmail.com\",\n    \"personalCode\": \"39101011234\",\n    \"startDate\": \"2020-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:58:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "delete member by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/chess-club/:memberId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"chess-club",
+						":memberId"
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "101",
+							"description": "ID of member"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete member by id returns 200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "101",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:58:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "delete member by id non existing member throws 400",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "101000",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 18:02:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-03-19T18:02:15.501+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/chess-club/101000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit member by id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"J\",\n    \"lastName\": \"Jonaite\",\n    \"email\": \"jonaite@gmail.com\",\n    \"personalCode\": \"49101011234\",\n    \"startDate\": \"2021-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/chess-club/:memberId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"chess-club",
+						":memberId"
+					],
+					"variable": [
+						{
+							"key": "memberId",
+							"value": "102",
+							"description": "ID of member"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit member by id with all fields returns 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Janina\",\n    \"lastName\": \"Jonaite\",\n    \"email\": \"jonaite@gmail.com\",\n    \"personalCode\": \"49101011234\",\n    \"startDate\": \"2021-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "102",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 18:03:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "edit member by id without personal code returns 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Janina\",\n    \"lastName\": \"Jonaite\",\n    \"email\": \"jonaite@gmail.com\",\n    \"startDate\": \"2021-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "102",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 18:19:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "edit member by id non existing member throws 400",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Janina\",\n    \"lastName\": \"Jonaite\",\n    \"email\": \"jonaite@gmail.com\",\n    \"startDate\": \"2021-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chess-club/:memberId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chess-club",
+								":memberId"
+							],
+							"variable": [
+								{
+									"key": "memberId",
+									"value": "10200",
+									"description": "ID of member"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 18:20:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-03-19T18:20:12.158+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/chess-club/10200\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

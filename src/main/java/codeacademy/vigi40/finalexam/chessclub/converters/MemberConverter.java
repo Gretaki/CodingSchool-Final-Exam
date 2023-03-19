@@ -52,8 +52,8 @@ public class MemberConverter {
         return personalCode.length() == 11 &&
                 Long.parseLong(personalCode) > 0 &&
                 Long.parseLong(personalCode.substring(0, 1)) < 7 &&
-                Long.parseLong(personalCode.substring(3, 5)) < 12 &&
-                Long.parseLong(personalCode.substring(5, 7)) < 31;
+                Long.parseLong(personalCode.substring(3, 5)) <= 12 &&
+                Long.parseLong(personalCode.substring(5, 7)) <= 31;
     }
 
     private static boolean validateStartDate(LocalDate startDate) {
@@ -120,11 +120,8 @@ public class MemberConverter {
     }
 
     public static List<MemberDto> convertMemberEntityListToDto(Page<Member> members) {
-        List<MemberDto> mamberDtoList = null;
+        List<MemberDto> mamberDtoList = new ArrayList<>();
         for (Member m : members) {
-            if (mamberDtoList == null) {
-                mamberDtoList = new ArrayList<>();
-            }
             mamberDtoList.add(convertMemberEntityToDto(m));
         }
         return mamberDtoList;

@@ -4,6 +4,9 @@ const renderMembersTable = async (members) => {
   const memberTableBody = document
     .getElementById("membersTable")
     .querySelector("tbody");
+    
+    memberTableBody.innerHTML = "";
+
   members.forEach((member) => {
     const memberRow = document.createElement("tr");
 
@@ -81,9 +84,67 @@ const handleAddNewMemberButton = () => {
   });
 };
 
+const loadPaginationNumbers = (totalPages, currentPage) => {
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    const list = document.createElement("ul");
+    list.classList.add("pagination", "justify-content-center");
+
+    const pageNumbers = [];
+    
+    pageNumbers.push(currentPage);
+    if (currentPage >0){
+        pageNumbers.push(currentPage-1);
+    } else if (currentPage+2 <totalPages){
+        pageNumbers.push(currentPage+2);
+    }
+    if (currentPage< totalPages-1){
+        pageNumbers.push(currentPage+1);
+    } else if (currentPage > 1){
+        pageNumbers.push(currentPage-2);
+    }
+
+    console.log(pageNumbers.sort((a, b) => a-b));
+    
+    const elements = pageNumbers.map(pagenumber => {
+        const activityValue = currentPage === pagenumber ? "active" : "";
+        const element = loadElement(activityValue, pagenumber+1);
+        element.addEventListener("click", async ()=>{
+            const members = await getMembers(pagenumber, 10);
+            loadPaginationNumbers(members.totalPages, members.currentPage);
+            renderMembersTable(members.members);
+        })
+        return element;
+    });
+
+    elements.forEach(element => list.append(element));
+    
+    pagination.append(list);
+}
+
+const loadElement = (activityValue, innerText) => {
+    const element = document.createElement("li");
+    if (activityValue != "") {
+        element.classList.add("page-item", activityValue);
+    } else {
+        element.classList.add("page-item");
+    }
+    
+    const elementLink = document.createElement("a");
+    elementLink.className = "page-link";
+    elementLink.innerText = innerText;
+    
+    
+    element.append(elementLink);
+
+    return element;
+}
+
 (async () => {
-  handleAddNewMemberButton();
-  const members = await getMembers();
-  console.log(members);
-  renderMembersTable(members);
+    handleAddNewMemberButton();
+    
+    const members = await getMembers(0, 10);
+    loadPaginationNumbers(members.totalPages, members.currentPage);
+    renderMembersTable(members.members);
 })();

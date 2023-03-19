@@ -9,8 +9,8 @@ export const validatePersonalCode = (personalCode) => {
     personalCode.length == 11 &&
     personalCode > 0 &&
     personalCode.substring(0, 1) < 7 &&
-    personalCode.substring(3, 5) < 12 &&
-    personalCode.substring(5, 7) < 31
+    personalCode.substring(3, 5) <= 12 &&
+    personalCode.substring(5, 7) <= 31
   ) {
     return true;
   }
